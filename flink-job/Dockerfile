@@ -9,7 +9,7 @@ COPY src ./src
 # Build the application
 RUN mvn clean package -DskipTests
 
-FROM flink:1.17
+FROM flink:1.20.1
 
 WORKDIR /opt/flink
 

@@ -10,6 +10,8 @@ import org.apache.flink.connector.kafka.source.enumerator.initializer.OffsetsIni
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.SinkFunction;
+import org.apache.flink.configuration.Configuration;
+import org.apache.flink.configuration.RestOptions;
 
 import org.json.JSONObject;
 
@@ -17,7 +19,11 @@ public class StreamingDataPipeline {
 
     public static void main(String[] args) throws Exception {
         // Set up the execution environment
-        final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        Configuration config = new Configuration();
+        config.setString(RestOptions.ADDRESS, "flink-jobmanager");
+        config.setInteger(RestOptions.PORT, 8081);
+
+        final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment(config);
 
         // Configure Kafka source
         KafkaSource<String> source = KafkaSource.<String>builder()
