@@ -239,6 +239,16 @@ You can add additional sinks to the Flink job to write data to other systems (e.
 
 Connect visualization tools like Grafana to StarRocks for real-time dashboards.
 
+## Contributing
+
+Contributions are welcome! If you have improvements, additional simulations, or suggestions, please open an issue or submit a pull request.
+
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+For any questions or support, please contact [agungatidhira@gmail.com](mailto:agungatidhira@gmail.com).
+
+---
