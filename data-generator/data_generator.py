@@ -26,6 +26,7 @@ USER_IDS = list(range(1, 1001))  # 1000 users
 def create_starrocks_table():
     """Create the database and table in StarRocks if they don't exist."""
     try:
+        time.sleep(60)  # Wait for StarRocks to start
         conn = mysql.connector.connect(
             host=STARROCKS_HOST,
             port=STARROCKS_PORT,
